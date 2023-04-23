@@ -1,18 +1,13 @@
 import { useState } from "react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Logo from "@/assets/Logo.png"
+import Link from "./Link";
 type Props = {
-//     selectedPage=
-//      {selectedPage}
-//       setSelectedPage={setSelectedPage}
+    selectedPage: string;
+    setSelectedPage : (value: string) => void
  }
-                                                                    //  1:04:25 / 4:03:49
-
-                                                                    //  •
-                                                                    //  Navbar Menu
  
- 
-const Navbar = (props: Props) => {
+const Navbar = ({selectedPage,setSelectedPage}: Props) => {
     const flexBetween = "flex items-center justify-between";
     return (
         <nav>
@@ -29,17 +24,30 @@ const Navbar = (props: Props) => {
                             {/* Left side */}
                             <div className={`${flexBetween} gap-8 text-sm`}>
                                 
-                                {/* <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/> 
-                                <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/> 
+                                <Link 
+                                    page="Home" 
+                                    selectedPage={selectedPage} 
+                                    setSelectedPage={setSelectedPage}
+                                /> 
+                                <Link 
+                                    page="Benefits" 
+                                    selectedPage={selectedPage} 
+                                    setSelectedPage={setSelectedPage}
+                                /> 
 
-                                <Link page="Our Classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/> 
-                                <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>  */}
+                                <Link 
+                                    page="Our Classes" 
+                                    selectedPage={selectedPage} 
+                                    setSelectedPage={setSelectedPage}
+                                />
 
-                                    
-                                    
-                                
-                                Contact Us  
+                                <Link 
+                                    page="Contact Us"  
+                                    selectedPage={selectedPage} 
+                                    setSelectedPage={setSelectedPage}
+                                />                                 
                             </div>
+                            
                             {/* Right side */}
                             <div className={`${flexBetween} gap-8`}>
                                 <p>Sign In</p>
